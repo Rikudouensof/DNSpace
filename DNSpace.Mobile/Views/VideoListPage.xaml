@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DNSpace.Mobile.Views.VideoListPage"
+             Title="VideoListPage">
+
+  <Grid Margin="00,05,00,00">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="2*"/>
+    </Grid.RowDefinitions>
+
+    <StackLayout Grid.Row="0" Orientation="Horizontal">
+      <SearchBar/>
+      <Button Text="New Video"/>
+    </StackLayout>
+    <Frame  Grid.Row="1" Margin="5" Padding="0">
+      <Image Source="https://lusatiaestorage.blob.core.windows.net/backgrounds/4.png" 
+          Aspect="AspectFit"
+           Margin="0"/>
+    </Frame>
+   
+    
+    
+    
+    <Image Source="video_call.png" Grid.Row="1" HeightRequest="50" WidthRequest="50"/>
+
+
+
+    <StackLayout Orientation="Vertical" Grid.Row="2">
+      <StackLayout Margin="10,00" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+        <Label Text="Children and Books" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+
+        <Label Text="Lagos, Nigeria" HorizontalOptions="EndAndExpand" FontAttributes="Bold"/>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" Margin="10,00">
+        <Label Text="2K Views" VerticalOptions="Center" FontAttributes="Italic"/>
+        <Button Text="Download" Margin="2"/>
+        <Button Text="Save" Margin="2"/>
+        <Button Text="Like" Margin="2"/>
+        <Button Text="Unlike" Margin="2"/>
+        <Button Text="Share" Margin="2"/>
+
+        <Button Text="Report" BackgroundColor="Gold" Margin="2"/>
+        <Button Text="Delete" BackgroundColor="DarkRed" Margin="2"/>
+      </StackLayout>
+
+      <Label Text="Comments" 
+             TextDecorations="Underline" 
+             FontAttributes="Bold"
+             Margin="05,00,00,00"/>
+      <Frame VerticalOptions="EndAndExpand" Margin="05">
+        <ListView>
+
+        </ListView>
+      </Frame>
+     
+
+    </StackLayout>
+  </Grid>
+    
+</ContentPage>

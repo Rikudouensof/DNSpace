@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DNSpace.Mobile.Views.ChatListPage"
+             xmlns:viewmodel="clr-namespace:DNSpace.Mobile.ViewModel"
+             Title="ChatListPage"
+             >
+  <ContentPage.BindingContext>
+    <viewmodel:ChatListPageViewModel/>
+  </ContentPage.BindingContext>
+
+  <StackLayout>
+    
+    <ListView ItemsSource="{Binding ContactList}"
+              HasUnevenRows="True"
+              SeparatorVisibility="Default"
+              
+              FlyoutItem.IsVisible="True">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Horizontal" Margin="00,10">
+              <Frame Margin="15,10" Padding="0" HeightRequest="75" WidthRequest="50">
+                <Image Source="{Binding ImageName}"  Aspect="AspectFill" Margin="0"/>
+              </Frame>
+              <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="{Binding FullName}" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+                  <Label Text="{Binding LastMessageTime}" FontSize="Small" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                  <Label Text="{Binding LastMessage}" Opacity="0.5" HorizontalOptions="StartAndExpand"/>
+                  
+                </StackLayout>
+               
+
+              </StackLayout>
+
+            </StackLayout>
+          </ViewCell>
+         
+        </DataTemplate>
+      </ListView.ItemTemplate>
+
+    </ListView>
+  </StackLayout>
+  
+ 
+</ContentPage>
